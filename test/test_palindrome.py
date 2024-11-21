@@ -26,14 +26,17 @@ class MyTestCase(unittest.TestCase):
 
 
     def test_felicitations(self):
-        # ETANT DONNE un palindrome
-        palindrome = 'radar'
+        cas = ['radar', 'kayak']
 
-        # QUAND on le saisit
-        résultat = Ohce.saisir(palindrome)
+        for palindrome in cas:
+            with self.subTest(palindrome):
+                # ETANT DONNE un palindrome
 
-        # ALORS 'Bien dit !' est renvoyé après la chaîne
-        self.assertEqual(palindrome + os.linesep + 'Bien dit !', résultat)
+                # QUAND on le saisit
+                résultat = Ohce.saisir(palindrome)
+
+                # ALORS 'Bien dit !' est renvoyé après la chaîne
+                self.assertEqual(palindrome + os.linesep + 'Bien dit !', résultat)
 
     def test_pas_bien_dit_sans_palindrom(self):
         # ETANT DONNE un non-palindrome
