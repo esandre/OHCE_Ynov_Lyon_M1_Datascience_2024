@@ -1,3 +1,4 @@
+import os
 import random
 import string
 import unittest
@@ -23,6 +24,16 @@ class MyTestCase(unittest.TestCase):
                 # ALORS elle est renvoyée en miroir
                 self.assertEqual(chaîne[::-1], résultat)
 
+
+    def test_felicitations(self):
+        # ETANT DONNE un palindrome
+        palindrome = 'radar'
+
+        # QUAND on le saisit
+        résultat = Ohce.saisir(palindrome)
+
+        # ALORS 'Bien dit !' est renvoyé après la chaîne
+        self.assertEqual(palindrome + os.linesep + 'Bien dit !', résultat)
 
 if __name__ == '__main__':
     unittest.main()
