@@ -2,6 +2,7 @@ import os
 import random
 import string
 import unittest
+from itertools import chain
 
 from ohce import Ohce
 
@@ -36,7 +37,7 @@ class MyTestCase(unittest.TestCase):
                 résultat = Ohce.saisir(palindrome)
 
                 # ALORS 'Bien dit !' est renvoyé après la chaîne
-                self.assertEqual(palindrome + os.linesep + 'Bien dit !', résultat)
+                self.assertIn(palindrome + os.linesep + 'Bien dit !', résultat)
 
     def test_pas_bien_dit_sans_palindrom(self):
         # ETANT DONNE un non-palindrome
@@ -47,6 +48,17 @@ class MyTestCase(unittest.TestCase):
 
         # ALORS 'Bien dit !' n'est pas renvoyé
         self.assertNotIn('Bien dit !', résultat)
+
+    def test_bonjour(self):
+        # ETANT DONNE une chaîne
+        chaîne = 'test'
+
+        # QUAND on la saisit
+        résultat = Ohce.saisir(chaîne)
+
+        # ALORS 'Bonjour' est renvoyé avant elle
+        attendu = 'Bonjour' + os.linesep
+        self.assertEqual(attendu, résultat[:len(attendu)])
 
 
 if __name__ == '__main__':
