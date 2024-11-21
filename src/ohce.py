@@ -6,6 +6,8 @@ class Ohce:
     def saisir(cls, chaîne):
         miroir = chaîne[::-1]
 
-        return 'Bonjour' + os.linesep + miroir + os.linesep + 'Bien dit !' \
+        return ('Bonjour' + os.linesep + miroir + os.linesep
+                + 'Bien dit !' + os.linesep + 'Au revoir') \
             if chaîne == miroir \
-            else 'Bonjour' + os.linesep + miroir + os.linesep + 'Au revoir'
+            else ('Bonjour' + os.linesep + miroir
+                  + os.linesep + 'Au revoir')
