@@ -8,4 +8,4 @@ class Ohce:
 
         return 'Bonjour' + os.linesep + miroir + os.linesep + 'Bien dit !' \
             if chaîne == miroir \
-            else 'Bonjour' + os.linesep + miroir
+            else 'Bonjour' + os.linesep + miroir + os.linesep + 'Au revoir'
