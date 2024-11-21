@@ -14,6 +14,16 @@ class MyTestCase(unittest.TestCase):
         # ALORS elle est renvoyée en miroir
         self.assertEqual('tset', résultat)
 
+    def test_miroir_2(self):
+        # ETANT DONNE une chaîne
+        chaîne = 'ynov'
+
+        # QUAND on la saisit
+        résultat = Ohce.saisir(chaîne)
+
+        # ALORS elle est renvoyée en miroir
+        self.assertEqual('vony', résultat)
+
 
 if __name__ == '__main__':
     unittest.main()
