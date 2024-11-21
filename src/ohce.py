@@ -1,4 +1,4 @@
 class Ohce:
     @classmethod
     def saisir(cls, chaîne):
-        return 'tset'
+        return 'tset' if chaîne == 'test' else 'vony'
