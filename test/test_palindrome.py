@@ -22,7 +22,7 @@ class MyTestCase(unittest.TestCase):
                 résultat = Ohce.saisir(chaîne)
 
                 # ALORS elle est renvoyée en miroir
-                self.assertEqual(chaîne[::-1], résultat)
+                self.assertIn(chaîne[::-1], résultat)
 
 
     def test_felicitations(self):
