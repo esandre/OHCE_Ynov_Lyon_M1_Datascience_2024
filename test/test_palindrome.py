@@ -60,6 +60,17 @@ class MyTestCase(unittest.TestCase):
         attendu = 'Bonjour' + os.linesep
         self.assertEqual(attendu, résultat[:len(attendu)])
 
+    def test_au_revoir(self):
+        # ETANT DONNE une chaîne
+        chaîne = 'test'
+
+        # QUAND on la saisit
+        résultat = Ohce.saisir(chaîne)
+
+        # ALORS 'Au revoir' est renvoyé en dernier
+        attendu = os.linesep + 'Au revoir'
+        self.assertEqual(attendu, résultat[-len(attendu):])
+
 
 if __name__ == '__main__':
     unittest.main()
