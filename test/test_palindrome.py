@@ -1,5 +1,8 @@
 import unittest
 
+from ohce import Ohce
+
+
 class MyTestCase(unittest.TestCase):
     def test_miroir(self):
         # ETANT DONNE une chaîne
