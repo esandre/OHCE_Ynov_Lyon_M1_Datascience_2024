@@ -61,15 +61,18 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(attendu, résultat[:len(attendu)])
 
     def test_au_revoir(self):
-        # ETANT DONNE une chaîne
-        chaîne = 'test'
+        cas = ['test', 'radar']
 
-        # QUAND on la saisit
-        résultat = Ohce.saisir(chaîne)
+        for chaîne in cas:
+            with self.subTest(chaîne):
+                # ETANT DONNE une chaîne
 
-        # ALORS 'Au revoir' est renvoyé en dernier
-        attendu = os.linesep + 'Au revoir'
-        self.assertEqual(attendu, résultat[-len(attendu):])
+                # QUAND on la saisit
+                résultat = Ohce.saisir(chaîne)
+
+                # ALORS 'Au revoir' est renvoyé en dernier
+                attendu = os.linesep + 'Au revoir'
+                self.assertEqual(attendu, résultat[-len(attendu):])
 
 
 if __name__ == '__main__':
